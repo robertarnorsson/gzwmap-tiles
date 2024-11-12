@@ -1,10 +1,13 @@
 import { Hono } from 'hono'
+import { favicon } from './icon';
 
 export type Env = {
   BUCKET: R2Bucket;
 }
 
 const app = new Hono<{ Bindings: Env }>()
+
+app.route("/favicon.ico", favicon);
 
 app.get('/', (c) => {
   return c.text('Tile server for gzwmap.com')
