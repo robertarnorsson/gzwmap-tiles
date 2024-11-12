@@ -6,7 +6,7 @@ Welcome to the Tile Server API for `gzwmap.com`. This API serves map tiles based
 ## Base URL
 
 ```plaintext
-https://gzwmap.com
+https://tiles.gzwmap.com
 ```
 
 ## Endpoints
