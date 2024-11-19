@@ -9,7 +9,3 @@ compatibility_date = "2024-11-02"
 [[r2_buckets]]
 binding = "BUCKET"
 bucket_name = "gzwmap-tiles"
-
-[observability]
-enabled = true
-head_sampling_rate = 1
