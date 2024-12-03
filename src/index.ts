@@ -13,16 +13,16 @@ app.get('/', (c) => {
   return c.text('Tile server for gzwmap.com')
 })
 
-app.get('/:z/:x/:y', async (c) => {
+app.get('/:v/:z/:x/:y', async (c) => {
   const { BUCKET } = c.env;
-  const { z, x, y } = c.req.param();
+  const { v, z, x, y } = c.req.param();
 
   if (isNaN(Number(z)) || isNaN(Number(x)) || isNaN(Number(y))) {
     return c.text('Invalid tile coordinates', 400);
   }
 
   try {
-    const tilePath = `${z}/${y}/${x}.jpg`;
+    const tilePath = `${v}/${z}/${y}/${x}.jpg`;
 
     const tile = await BUCKET.get(tilePath);
 
